@@ -1,3 +1,7 @@
+[![Python application](https://github.com/JaofourthsOhappy/ci-demo/actions/workflows/python-unittest.yml/badge.svg)](https://github.com/JaofourthsOhappy/ci-demo/actions/workflows/python-unittest.yml)
+
+
+
 Continuous Integration Demo
 ===========================
 
