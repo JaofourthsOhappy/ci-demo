@@ -1,32 +1,31 @@
-"""
-Unit tests for the statistics module.
-
-Tests the variance and standard deviation functions with typical values,
-non-integer values, and edge cases.
-"""
-
 from unittest import TestCase
 from statistics import variance, stdev
+from math import sqrt
 
 
 class StatisticsTest(TestCase):
 
     def test_variance_typical_values(self):
-        """Test variance with typical values."""
-        self.assertAlmostEqual(0.0, variance([10.0, 10.0, 10.0, 10.0, 10.0]), places=7)
-        self.assertAlmostEqual(2.0, variance([1, 2, 3, 4, 5]), places=7)
-        self.assertAlmostEqual(8.0, variance([10, 2, 8, 4, 6]), places=7)
+        """Variance of typical values."""
+        self.assertEqual(0.0, variance([10.0, 10.0, 10.0, 10.0, 10.0]))
+        self.assertEqual(2.0, variance([1, 2, 3, 4, 5]))
+        self.assertEqual(8.0, variance([10, 2, 8, 4, 6]))
 
     def test_variance_non_integers(self):
-        """Test variance with decimal values."""
-        self.assertAlmostEqual(4.0, variance([0.1, 4.1]), places=7)
-        self.assertAlmostEqual(8.0, variance([0.1, 4.1, 4.1, 8.1]), places=7)
+        """Variance should work with decimal values."""
+        # variance([x,y,z]) == variance([x+d,y+d,z+d]) for any d
+        self.assertEqual(4.0, variance([0.1, 4.1]))
+        # variance([0, 4, 4, 8]) == 8
+        self.assertEqual(8.0, variance([0.1, 4.1, 4.1, 8.1]))
 
     def test_stdev(self):
-        """Test standard deviation calculation."""
+        """Standard deviation tests."""
+        # Standard deviation of a single value should be zero
         self.assertEqual(0.0, stdev([10.0]))
-        self.assertAlmostEqual(2.0, stdev([1, 5]), places=7)
-        self.assertAlmostEqual(stdev([0, 0.5, 1, 1.5, 2]), sqrt(0.5), places=7)
+        # Simple test
+        self.assertEqual(2.0, stdev([1, 5]))
+        # variance([0, 0.5, 1, 1.5, 2.0]) is 0.5
+        self.assertEqual(sqrt(0.5), stdev([0, 0.5, 1, 1.5, 2]))
 
 
 if __name__ == '__main__':
