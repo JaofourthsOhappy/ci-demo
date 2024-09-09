@@ -44,4 +44,4 @@ def stdev(data):
 
     Uses the square root of the variance.
     """
-    return math.sqrt(variance(data))  # Use math.sqrt to fix name 'sqrt'
+    return math.sqrt(variance(data))  # Use math.sqrt to fix the undefined name 'sqrt'
