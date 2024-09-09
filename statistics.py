@@ -1,8 +1,11 @@
+import math  # Import the math module for sqrt
+
+
 def average(data):
     """Return the average of a list of numeric values in data."""
-    if len(data)==0:
+    if len(data) == 0:  # Add whitespace around the operator
         raise ValueError("List must contain at least one value")
-    return sum(data)/len(data)
+    return sum(data) / len(data)  # Add whitespace around the operator
 
 
 def variance(data):
@@ -15,7 +18,7 @@ def variance(data):
 
     Example: variance([1,5]) is ((1-3)**2 + (5-3)**2)/2 = 4.
 
-    :param data: list of numbers for which variance will be computed. 
+    :param data: list of numbers for which variance will be computed.
            Must contain at least one element.
     :returns: population variance of values in data list.
     :raises ValueError: if the data parameter is empty.
@@ -29,15 +32,16 @@ def variance(data):
     >>> variance([1000000, 1000004])
     4.0
     """
-    # ugly code.
-    n=len(data)
-    if n==0:
+    n = len(data)  # Add whitespace around the operator
+    if n == 0:  # Add whitespace around the operator
         raise ValueError("List must contain at least one value")
     avg = average(data)
-    return sum( [(x-avg)**2 for x in data] )/n
+    return sum([(x - avg) ** 2 for x in data]) / n  # Shorten line length
 
 
 def stdev(data):
-    """the standard deviation of a list of values"""
-    return sqrt(variance(data))
+    """the standard deviation of a list of values.
 
+    Uses the square root of the variance.
+    """
+    return math.sqrt(variance(data))  # Shortened the line
