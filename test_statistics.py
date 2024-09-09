@@ -1,5 +1,5 @@
 from unittest import TestCase
-from statistics import variance, stdev, pvariance
+from statistics import variance, stdev
 from math import sqrt
 
 
@@ -15,11 +15,11 @@ class StatisticsTest(TestCase):
         """variance should work with decimal values"""
         # variance([x,y,z]) == variance([x+d,y+d,z+d]) for any d
         self.assertAlmostEqual(
-            4.0, pvariance([0.1, 4.1]), places=7
+            4.0, variance([0.1, 4.1]), places=7
         )
         # variance([0,4,4,8]) == 8
         self.assertAlmostEqual(
-            8.0, pvariance([0.1, 4.1, 4.1, 8.1]), places=7
+            8.0, variance([0.1, 4.1, 4.1, 8.1]), places=7
         )
 
     def test_stdev(self):
