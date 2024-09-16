@@ -1,4 +1,4 @@
-"""This file contains Statistic calculation functions."""
+"""Module consists of function to calculate statistics list of numeric data."""
 
 from math import sqrt
 
@@ -11,16 +11,16 @@ def average(data):
 
 
 def variance(data):
-    """Return population variance of a list of numbers in data.
+    """Return the population variance of a list of numbers in data.
 
     The variance is the sum of squared differences between data values
     and their mean, divided by the number of items in the list.
-    This is different from the Python library function statistics.variance
+    This is different from the Python library function statistics. Variance
     which returns the sample variance, where the sum is divided by (n-1).
 
     Example: variance([1,5]) is ((1-3)**2 + (5-3)**2)/2 = 4.
     :param data: list of numbers for which variance will be computed.
-    Must contain at least one element.
+           Must contain at least one element.
     :returns: population variance of values in data list.
     :raises ValueError: if the data parameter is empty.
 
@@ -33,17 +33,12 @@ def variance(data):
     >>> variance([1000000, 1000004])
     4.0
     """
-    n = len(data)
-    if n == 0:
+    if len(data) == 0:
         raise ValueError("List must contain at least one value")
     avg = average(data)
-    return round(sum([(x-avg)**2 for x in data])/n, 1)
+    return sum([(x-avg)**2 for x in data])/len(data)
 
 
 def stdev(data):
-    """Return standard deviation of a list of values."""
-    if len(data) == 0:
-        raise ValueError("List must contain at least one value")
-    if len(data) == 1:
-        return 0
+    """Return standard deviation of a list of numeric values."""
     return sqrt(variance(data))
