@@ -1,6 +1,6 @@
 [![Python application](https://github.com/JaofourthsOhappy/ci-demo/actions/workflows/python-unittest.yml/badge.svg)](https://github.com/JaofourthsOhappy/ci-demo/actions/workflows/python-unittest.yml)
 [![Test for flake8](https://github.com/JaofourthsOhappy/ci-demo/actions/workflows/python-flake8.yml/badge.svg)](https://github.com/JaofourthsOhappy/ci-demo/actions/workflows/python-flake8.yml)
-[![CodeCoverage](https://github.com/JaofourthsOhappy/ci-demo/actions/workflows/coverage-app.yml/badge.svg)](https://github.com/JaofourthsOhappy/ci-demo/actions/workflows/coverage-app.yml)
+[![codecov](https://codecov.io/github/JaofourthsOhappy/ci-demo/graph/badge.svg?token=X4W9S21H2E)](https://codecov.io/github/JaofourthsOhappy/ci-demo)
 
 Continuous Integration Demo
 ===========================
